@@ -1,0 +1,10 @@
+.item {
+    background-color: rgb(202, 154, 247);
+    border: rgb(122, 78, 164) 2px solid;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.dark {
+    color: #000c12 !important;
+}

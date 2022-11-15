@@ -6,3 +6,6 @@ Members: Addie Reichert and Alicia Thoney
 Description:
 
 How to run:
+- `cd into secure or vulnerable`
+- `cd into server`
+- `go run server.go`

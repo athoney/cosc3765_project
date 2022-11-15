@@ -1,0 +1,53 @@
+{{ define "admin" }}
+{{template "header" .}}
+
+<main class="px-3 m-auto text-center mb-5 w-75">
+
+    <div class="row bg-light rounded mb-5 p-3">
+        <h3>FTP Server View</h3>
+        <div class="row">
+            <div class="col-6">
+                <div class="row item">
+                    <p>File</p>
+                </div>
+                <div class="row item">
+                    <p>File</p>
+                </div>
+                <div class="row item">
+                    <p>File</p>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row item">
+                    <p>Download</p>
+                </div>
+                <div class="row item">
+                    <p>Download</p>
+                </div>
+                <div class="row item">
+                    <p>Download</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row bg-light rounded p-3">
+        <h3>Emails</h3>
+
+        <div class="row item">
+            <p>Email</p>
+        </div>
+        <div class="row item">
+            <p>Email</p>
+        </div>
+        <div class="row item">
+            <p>Email</p>
+        </div>
+
+    </div>
+
+
+</main>
+
+{{template "footer" .}}
+{{ end }}
