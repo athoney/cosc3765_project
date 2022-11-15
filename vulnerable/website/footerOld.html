@@ -1,0 +1,45 @@
+{{ define "footerOld" }}
+
+<div class="container-fluid mt-auto bg-dark justify-content-center ">
+    <footer class="py-3 w-75 mx-auto">
+        <div class="row ">
+
+            <div class="col-4">
+                <img src="assets/logoSmall.png" alt="logo" height="100">
+            </div>
+
+
+
+            <div class="col-4 text-white">
+                <form>
+                    <h5>Subscribe to our newsletter</h5>
+                    <p>Monthly digest of what's new and exciting from us.</p>
+                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                        <label for="newsletter1" class="visually-hidden">Email address</label>
+                        <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+
+
+
+            <div class="col-4 text-end">
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="/contact-us" class="nav-link p-0 text-muted">Contact Us</a></li>
+                    <li class="nav-item mb-2"><a href="/thing2" class="nav-link p-0 text-muted">Thing 2</a></li>
+                    <li class="nav-item mb-2"><a href="/thing1" class="nav-link p-0 text-muted">Thing 1</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+</html>
+{{end}}

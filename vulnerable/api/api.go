@@ -22,18 +22,26 @@ func Login(c *gin.Context) {
 	)
 }
 
-func Thing2(c *gin.Context) {
+func Testimonies(c *gin.Context) {
 	c.HTML(
 		http.StatusOK,
-		"thing-2",
+		"testimonies",
 		gin.H{},
 	)
 }
 
-func Thing1(c *gin.Context) {
+func Gallery(c *gin.Context) {
 	c.HTML(
 		http.StatusOK,
-		"thing-1",
+		"gallery",
+		gin.H{},
+	)
+}
+
+func Survey(c *gin.Context) {
+	c.HTML(
+		http.StatusOK,
+		"survey",
 		gin.H{},
 	)
 }

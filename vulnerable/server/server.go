@@ -12,8 +12,9 @@ func main() {
 	//Static Routes
 	r.GET("/", api.Home)
 	r.GET("/login", api.Login)
-	r.GET("/thing2", api.Thing2)
-	r.GET("/thing1", api.Thing1)
+	r.GET("/testimonies", api.Testimonies)
+	r.GET("/survey", api.Survey)
+	r.GET("/gallery", api.Gallery)
 	r.GET("/contact-us", api.ContactUs)
 	r.GET("/admin", api.Admin)
 

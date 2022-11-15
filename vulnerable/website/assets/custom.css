@@ -5,6 +5,12 @@
     margin: 5px;
 }
 
-.dark {
-    color: #000c12 !important;
+body {
+    background-color: #ffde59;
+    background-image: url("background.png");
+}
+
+.yellow-background {
+    background-color: #ffde59;
+    border-radius: 25px;
 }
