@@ -9,3 +9,4 @@ How to run:
 - `cd into secure or vulnerable`
 - `cd into server`
 - `go run server.go`
+- go to localhost:8080 in a web browser
