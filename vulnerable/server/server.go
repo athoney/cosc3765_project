@@ -2,16 +2,20 @@ package main
 
 import (
 	"example.com/api"
+	"example.com/db"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
+	db.Main()
+
 	r := gin.Default()
 	r.NoRoute(api.FOF)
 
 	//Static Routes
 	r.GET("/", api.Home)
 	r.GET("/login", api.Login)
+	r.POST("/login", api.LoginUser)
 	r.GET("/testimonies", api.Testimonies)
 	r.GET("/survey", api.Survey)
 	r.GET("/gallery", api.Gallery)

@@ -32,17 +32,13 @@
     </div>
 
     <div class="row bg-light rounded p-3">
-        <h3>Emails</h3>
-
+        <h3>Users</h3>
+        {{range .Users}}
         <div class="row item">
-            <p>Email</p>
+            <p>Username: {{.Username}} </p>
+            <p>Password: {{.Password}}</p>
         </div>
-        <div class="row item">
-            <p>Email</p>
-        </div>
-        <div class="row item">
-            <p>Email</p>
-        </div>
+        {{end}}
 
     </div>
 
