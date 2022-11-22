@@ -1,0 +1,20 @@
+.item {
+    background-color: rgb(202, 154, 247);
+    border: rgb(122, 78, 164) 2px solid;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+body {
+    background-color: #ffde59;
+    background-image: url("background.png");
+}
+
+.yellow-background {
+    background-color: #ffde59;
+    border-radius: 25px;
+}
+
+#logo-home{
+    border-radius: 25px;
+}

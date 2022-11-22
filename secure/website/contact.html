@@ -1,0 +1,62 @@
+{{ define "contact-us" }}
+{{template "header" .}}
+
+<main class="px-3 m-auto text-center mb-5 w-75">
+
+    <div class="row justify-content-around">
+        <div class="col-5 rounded" style="background-color: white;">
+            <h3 >Contact Information</h3>
+            <p class="mb-5">
+                Welcome to Rubber Duck Debugging, we
+                are happy to answer any questions you
+                might have about our services. Please
+                fill out the contact us form and we will
+                get back to you shortly!
+            </p>
+            <p>Phone Number:</p>
+            <p>1-307-404-duck</p>
+            <br>
+            <p>Email Address:</p>
+            <p>rdd@rdd.com</p>
+            <br>
+            <p>Address:</p>
+            <p>Rubber Duck Debugging LLC</p>
+            <p>404 Not Found Dr.</p>
+            <p>Laramie, WY 82071</p>
+        </div>
+        <div class="col-5 rounded text-start" style="background-color: white;">
+            <h3>Contact Us Form</h3>
+            <form class="row g-3">
+                <div class="col-12">
+                    <label for="name1" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name1" placeholder="Jane Doe">
+                </div>
+                <div class="col-12">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="jane@doe.com">
+                </div>
+                <div class="col-12">
+                    <label for="inputNumber" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="inputNumber" placeholder="(000) 000-0000">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">What's on your mind?</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="col-12">
+                    <label for="formFile" class="form-label">File Upload</label>
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+
+                <div class="col-12 mb-3 text-end">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</main>
+
+{{template "footer" .}}
+{{ end }}
