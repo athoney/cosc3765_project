@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"net/http"
 
-	"example.com/db"
-	"example.com/query"
+	"example2.com/db"
+	"example2.com/query"
 	"github.com/gin-gonic/gin"
+	"golang.org/x/crypto/bcrypt"
 )
 
 var conn = db.Main()
@@ -30,15 +31,12 @@ func Login(c *gin.Context) {
 }
 
 func LoginUser(c *gin.Context) {
-	c.Request.ParseForm()
-	// user, ok1 := c.Request.PostForm["user"]
-	// password, ok2 := c.Request.PostForm["password"]
-
-	username := c.Request.PostForm["user"]
-	password := c.Request.PostForm["password"]
+	username := c.Request.PostFormValue("user")
+	password := c.Request.PostFormValue("password")
+	hashedPassword, _ := bcrypt.GenerateFromPassword([]byte(password), 14)
 	fmt.Printf("username: %s", username)
-	fmt.Printf("password: %s", password)
-	val := query.NewUser(conn, username[0], password[0])
+	fmt.Printf("password: %s", string(hashedPassword))
+	val := query.NewUser(conn, username, string(hashedPassword))
 	c.HTML(
 		http.StatusOK,
 		"login",
@@ -80,13 +78,32 @@ func ContactUs(c *gin.Context) {
 	)
 }
 
+func SendRequest(c *gin.Context) {
+	name := c.Request.PostFormValue("name")
+	email := c.Request.PostFormValue("email")
+	desc := c.Request.PostFormValue("desc")
+	fmt.Printf("name: %s", name)
+	fmt.Printf("email: %s", email)
+	fmt.Printf("desc: %s", desc)
+	status := query.NewRequest(conn, name, email, desc)
+	c.HTML(
+		http.StatusOK,
+		"contact-us",
+		gin.H{
+			"status": status,
+		},
+	)
+}
+
 func Admin(c *gin.Context) {
 	users := query.QueryUsers(conn)
+	requests := query.QueryRequests(conn)
 	c.HTML(
 		http.StatusOK,
 		"admin",
 		gin.H{
-			"Users": users,
+			"Users":    users,
+			"Requests": requests,
 		},
 	)
 }

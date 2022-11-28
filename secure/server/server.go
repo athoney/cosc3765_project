@@ -1,8 +1,8 @@
 package main
 
 import (
-	"example.com/api"
-	"example.com/db"
+	"example2.com/api"
+	"example2.com/db"
 	"github.com/gin-gonic/gin"
 )
 
@@ -20,6 +20,7 @@ func main() {
 	r.GET("/survey", api.Survey)
 	r.GET("/gallery", api.Gallery)
 	r.GET("/contact-us", api.ContactUs)
+	r.POST("/contact-us", api.SendRequest)
 	r.GET("/admin", api.Admin)
 
 	//Load HTML Templates

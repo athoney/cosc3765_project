@@ -3,33 +3,25 @@
 
 <main class="px-3 m-auto text-center mb-5 w-75">
 
-    <div class="row bg-light rounded mb-5 p-3">
-        <h3>FTP Server View</h3>
+    <div class="row bg-light rounded p-3">
+        <h3>Requests</h3>
+        {{range .Requests}}
         <div class="row">
             <div class="col-6">
                 <div class="row item">
-                    <p>File</p>
-                </div>
-                <div class="row item">
-                    <p>File</p>
-                </div>
-                <div class="row item">
-                    <p>File</p>
+                    <p>Username: {{.Name}}, {{.Email}} </p>
                 </div>
             </div>
             <div class="col-6">
                 <div class="row item">
-                    <p>Download</p>
-                </div>
-                <div class="row item">
-                    <p>Download</p>
-                </div>
-                <div class="row item">
-                    <p>Download</p>
+                    <p>Description: {{.Desc}}</p>
                 </div>
             </div>
         </div>
+        {{end}}
+
     </div>
+
 
     <div class="row bg-light rounded p-3">
         <h3>Users</h3>

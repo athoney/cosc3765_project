@@ -4,14 +4,16 @@
 <main class="px-3 m-auto text-center mb-5 w-50">
 
     {{if eq .status "OK"}}
-    <div class="alert alert-primary" role="alert">
-        User added!
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        User added.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     {{end}}
 
     {{if eq .status "FAIL"}}
-    <div class="alert alert-danger" role="alert">
-        User already exists!
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        Username already exists.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     {{end}}
 

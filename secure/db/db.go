@@ -103,10 +103,10 @@ func processContacts(ent [][]string, dat *sql.DB) {
 	//Drop the table so we can then update it
 	dat.Exec("DROP TABLE contacts;")
 	//Create the table
-	dat.Exec("CREATE TABLE contacts (Name VARCHAR(1024), Email VARCHAR(1024), Phone VARCHAR(1024), Info VARCHAR(1024), File VARCHAR(1024)) ;")
+	dat.Exec("CREATE TABLE contacts (Name VARCHAR(1024), Email VARCHAR(1024), Description VARCHAR(1024)) ;")
 	totalRows := 0
 	for i := 1; i < len; i++ {
-		result, err := dat.Exec("INSERT INTO contacts (Name, Email, Phone, Info, File) VALUES ($1,$2,$3,$4,$5);", ent[i][0], ent[i][1], ent[i][2], ent[i][3], ent[i][4])
+		result, err := dat.Exec("INSERT INTO contacts (Name, Email, Description) VALUES ($1,$2,$3);", ent[i][0], ent[i][1], ent[i][2])
 		if err != nil {
 			log.Fatalf("row not affected: %v on i:%d", err, i)
 		}
