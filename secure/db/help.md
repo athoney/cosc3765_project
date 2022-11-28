@@ -15,7 +15,8 @@
     2. Fill in postgres user information
 4. Start sever (In server directory $`go run server.go`)
     1. Open psql again
-    2. Run `c\ vuln` - This connects you to the vuln database
-    3. Your prompt should now say: `vuln=# `
+    2. Run `\c vuln` - This connects you to the vuln database
+    2. Your prompt should now say: `vuln=# `
+    3. Run `\dt` - This lists the tables in your database
     4. Query the database: `SELECT * FROM <table>;` (users or contacts)
     5. You should see data in the terminal
