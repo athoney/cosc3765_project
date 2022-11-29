@@ -80,13 +80,32 @@ func ContactUs(c *gin.Context) {
 	)
 }
 
+func SendRequest(c *gin.Context) {
+	name := c.Request.PostFormValue("name")
+	email := c.Request.PostFormValue("email")
+	desc := c.Request.PostFormValue("desc")
+	fmt.Printf("name: %s", name)
+	fmt.Printf("email: %s", email)
+	fmt.Printf("desc: %s", desc)
+	status := query.NewRequest(conn, name, email, desc)
+	c.HTML(
+		http.StatusOK,
+		"contact-us",
+		gin.H{
+			"status": status,
+		},
+	)
+}
+
 func Admin(c *gin.Context) {
 	users := query.QueryUsers(conn)
+	requests := query.QueryRequests(conn)
 	c.HTML(
 		http.StatusOK,
 		"admin",
 		gin.H{
-			"Users": users,
+			"Users":    users,
+			"Requests": requests,
 		},
 	)
 }
