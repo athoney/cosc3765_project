@@ -84,13 +84,12 @@ func NewUser(dat *sql.DB, uname string, pass string) string {
 
 func NewRequest(dat *sql.DB, name string, email string, desc string) string {
 	//SQL injection
-	// ', ''); DROP TABLE users; --
+	// ', '', ''); DROP TABLE users; --
 	totalRows := 0
-	// exec := "INSERT INTO users (Username, Password) VALUES ('" + uname + "', '" + pass + "');"
-	// fmt.Println(exec)
-	// result, err := dat.Exec(exec)
+	exec := "INSERT INTO contacts (Name, Email, Description) VALUES('" + name + "', '" + email + "', '" + desc + "');"
+	fmt.Println(exec)
+	result, err := dat.Exec(exec)
 
-	result, err := dat.Exec("INSERT INTO contacts (Name, Email, Description) VALUES ($1,$2,$3);", name, email, desc)
 	if err != nil {
 		fmt.Printf("row not affected: %v", err)
 		return "FAIL"
